@@ -11,6 +11,7 @@ Este proyecto requiere de la creacion de una key/ llave  [GOOGLE MAP API](https:
 then create a file named .env and write REACT_APP_GOOGLE_API_KEY = YOURGOOGLEAPIKEY.<br/>
 luego debes crear un archivo llamado .env y escribir REACT_APP_GOOGLE_API_KEY = YOURGOOGLEAPIKEY.
 
+[![Watch the video](https://res.cloudinary.com/javier1/image/upload/v1624938288/Screenshot_1_ogksce.jpg)](https://drive.google.com/file/d/1RqV6D6i-6dUgq-T0XCVm5jGd-kmaAJDq/view)
 
 
 <strike> this is a small prototipe. so.. is not a responsive web </strike></br>
