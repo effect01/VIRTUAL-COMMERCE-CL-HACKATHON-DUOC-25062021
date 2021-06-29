@@ -37,15 +37,16 @@ function App(props) {
 // SETTING CACHE ? 
   useEffect(async ()=>{
     if(auth.token === null || auth.token === undefined){
+      if(localStorage.getItem('cart-items')){
+        const cacheItems = await JSON.parse(localStorage.getItem('cart-items') ) ;
+        const cacheCount = await  parseInt( localStorage.getItem('cart-count'));
+        const cacheTotal = await   parseInt(  localStorage.getItem('cart-total'));
+      loadCartCache(cacheItems, cacheCount, cacheTotal);
+      }
       if( localStorage.getItem('auth') ){
         const auth = await JSON.parse(localStorage.getItem('auth') ) ;
         fetchAuth(auth.profile.CORREO, auth.token);
-        if(localStorage.getItem('cart-items')){
-          const cacheItems = await JSON.parse(localStorage.getItem('cart-items') ) ;
-          const cacheCount = await  parseInt( localStorage.getItem('cart-count'));
-          const cacheTotal = await   parseInt(  localStorage.getItem('cart-total'));
-        loadCartCache(cacheItems, cacheCount, cacheTotal);
-        }
+       
         axios.defaults.headers.common =  {'Authorization': `Bearer ${auth.token}`}
       }
     }else{
